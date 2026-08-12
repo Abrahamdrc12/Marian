@@ -1,0 +1,23 @@
+<div class="portada">
+  <div class="overlay"></div>
+
+  <!--
+    Reemplaza esta imagen por una foto de ustedes:
+    src/assets/photos/portada.jpg
+  -->
+  <div class="bg-photo"></div>
+
+  <button class="music-toggle" (click)="toggleMusica()" [attr.aria-label]="sonando() ? 'Pausar música' : 'Reproducir música'">
+    {{ sonando() ? '🔈' : '🔇' }}
+  </button>
+
+  <!-- Reemplaza por una canción propia en src/assets/music/portada.mp3 -->
+  <audio #musica loop>
+    <source src="assets/music/portada.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="content fade-in">
+    <p class="phrase">Hay momentos que uno recuerda para siempre&hellip;</p>
+    <button class="btn-cta" (click)="empezar()">Quiero recordar contigo Popocilla →</button>
+  </div>
+</div>

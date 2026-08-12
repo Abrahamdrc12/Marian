@@ -1,0 +1,142 @@
+.escena {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, var(--blush), var(--blush-soft));
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tarjeta {
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  background: var(--cream);
+  border-radius: 24px;
+  padding: 56px 32px;
+  box-shadow: 0 20px 50px rgba(122, 32, 72, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.linea,
+.pregunta {
+  font-family: var(--font-title);
+  color: var(--wine);
+  margin: 0;
+}
+
+.linea {
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+}
+
+.pregunta {
+  font-size: clamp(1.5rem, 5vw, 2.1rem);
+  font-weight: 600;
+}
+
+.frase-esquiva {
+  color: var(--rose);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.contenedor-botones {
+  position: relative;
+  min-height: 320px;
+  justify-content: flex-start;
+  padding-bottom: 100px;
+}
+
+.botones {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  margin-top: 12px;
+}
+
+.btn-si {
+  position: absolute;
+  left: 50%;
+  top: 16px;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--wine), var(--wine-dark));
+  color: var(--cream);
+  padding: 16px 40px;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 10px 26px rgba(122, 32, 72, 0.35);
+  transition: transform 0.25s ease;
+  z-index: 2;
+
+  &:hover {
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+.btn-no {
+  position: absolute;
+  top: 90px;
+  left: calc(50% - 40px);
+  background: transparent;
+  color: var(--rose);
+  border: 1.5px solid var(--rose);
+  padding: 10px 26px;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  transition: top 0.35s ease, left 0.35s ease, transform 0.2s ease;
+  z-index: 1;
+}
+
+.btn-no.movido {
+  transition: top 0.35s ease, left 0.35s ease;
+}
+
+/* ===== Celebración ===== */
+.celebracion {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.corazon-flotante {
+  position: absolute;
+  bottom: -40px;
+  font-size: 1.6rem;
+  animation-name: floatHeart;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+.tarjeta-final {
+  text-align: center;
+  background: var(--cream);
+  border-radius: 24px;
+  padding: 48px 40px;
+  box-shadow: 0 20px 50px rgba(122, 32, 72, 0.2);
+  z-index: 2;
+}
+
+.titulo-final {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  color: var(--wine);
+  margin: 0 0 12px;
+}
+
+.subtitulo-final {
+  color: var(--ink);
+  opacity: 0.75;
+  margin: 0;
+}

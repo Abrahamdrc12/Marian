@@ -1,0 +1,19 @@
+<div class="stage">
+  @switch (pasoActual()) {
+    @case (1) {
+      <app-portada (comenzar)="siguientePaso()" />
+    }
+    @case (2) {
+      <app-primera-salida (completado)="siguientePaso()" />
+    }
+    @case (3) {
+      <app-comienzo (completado)="siguientePaso()" />
+    }
+    @case (4) {
+      <app-mensaje (completado)="siguientePaso()" />
+    }
+    @case (5) {
+      <app-sorpresa />
+    }
+  }
+</div>

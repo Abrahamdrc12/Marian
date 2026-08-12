@@ -1,0 +1,54 @@
+<div class="escena">
+
+  @if (fase() === 1) {
+    <div class="tarjeta fade-in">
+      <p class="linea">Tengo una pregunta para ti&hellip;</p>
+      <button class="btn-cta" (click)="revelarPregunta()">¿Puedo?</button>
+    </div>
+  }
+
+  @if (fase() === 2) {
+    <div class="tarjeta fade-in contenedor-botones">
+      <p class="pregunta">¿Aceptas una cita sorpresa conmigo?</p>
+
+      @if (fraseActual()) {
+        <p class="frase-esquiva fade-in">{{ fraseActual() }}</p>
+      }
+
+      <div class="botones">
+        <button class="btn-si" (click)="aceptar()">❤️ SÍ</button>
+
+        <button
+          class="btn-no"
+          (mouseenter)="esquivarNo($event)"
+          (click)="esquivarNo($event)"
+          [style.top.px]="noTop()"
+          [style.left.px]="noLeft()"
+          [class.movido]="noTop() !== null"
+        >
+          No
+        </button>
+      </div>
+    </div>
+  }
+
+  @if (fase() === 3) {
+    <div class="celebracion fade-in">
+      @for (c of corazones(); track c.id) {
+        <span
+          class="corazon-flotante"
+          [style.left.%]="c.left"
+          [style.animation-delay.s]="c.delay"
+          [style.animation-duration.s]="c.duracion"
+        >{{ c.simbolo }}</span>
+      }
+
+      <div class="tarjeta-final fade-in">
+        <p class="titulo-final">¡Sabia que dirias que si, es una cita! 💕</p>
+        <p class="subtitulo-final">Luego te digo donde sera&hellip; espero con ansias ese dia.</p>
+        <p class="subtitulo-final">Prepárate&hellip; esto apenas empieza Popocilla Nalgona.</p>
+      </div>
+    </div>
+  }
+
+</div>

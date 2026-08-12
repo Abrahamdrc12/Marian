@@ -1,0 +1,41 @@
+.escena {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--wine-dark), var(--wine));
+  padding: 24px;
+}
+
+.tarjeta {
+  max-width: 560px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}
+
+.linea {
+  font-family: var(--font-title);
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  color: var(--cream);
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.destacada {
+  color: var(--gold-soft);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.btn-cta {
+  margin-top: 24px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 1s;
+}

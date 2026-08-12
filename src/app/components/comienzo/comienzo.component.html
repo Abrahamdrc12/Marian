@@ -1,0 +1,18 @@
+<div class="escena">
+  <h2 class="titulo fade-in">El comienzo</h2>
+  <p class="subtitulo fade-in">Cada momento, un paso más cerca de hoy.</p>
+
+  <div class="timeline">
+    @for (m of momentos; track m.titulo; let i = $index) {
+      <div class="item fade-in" [style.animation-delay.ms]="i * 150">
+        <div class="foto" [style.background-image]="'url(' + m.src + ')'"></div>
+        <div class="texto">
+          <span class="fecha">{{ m.fecha }}</span>
+          <p class="momento-titulo">{{ m.titulo }}</p>
+        </div>
+      </div>
+    }
+  </div>
+
+  <button class="btn-cta" (click)="continuar()">Seguir</button>
+</div>
